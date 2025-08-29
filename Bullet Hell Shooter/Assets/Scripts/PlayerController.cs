@@ -4,18 +4,17 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float speed = 10.0f;
+    public float precisionSpeed = 5.0f;
+    private float currentSpeed;
+
+    public KeyCode switchKey;
+
     public float horizontalInput;
     public float verticalInput;
     
     public Vector2 Hrange = Vector2.zero;
     public Vector2 Vrange = Vector2.zero;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -23,8 +22,17 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.up * Time.deltaTime * speed * verticalInput);
-        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
+        if(Input.GetKey(switchKey))
+        {
+            currentSpeed = precisionSpeed;
+        }
+        else
+        {
+            currentSpeed = speed;
+        }
+
+        transform.Translate(Vector3.up * Time.deltaTime * currentSpeed * verticalInput);
+        transform.Translate(Vector3.right * Time.deltaTime * currentSpeed * horizontalInput);
     }
 
     void LateUpdate() 
