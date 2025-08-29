@@ -61,16 +61,16 @@ public class BulletPool : MonoBehaviour
         return bulletPool[bulletPool.Count - 1];
     }
 
-    public int ActiveBulletsCount()
+    public int ActiveBossBulletsCount()
     {
-        int activeBullets = 0;
+        int activeBossBullets = 0;
 
         for(int i = 0; i < bulletPool.Count; i++)
         {
             if(bulletPool[i].gameObject.activeSelf)
-                activeBullets++;
+                activeBossBullets++;
         }
 
-        return activeBullets;
+        return activeBossBullets;
     }
 }
