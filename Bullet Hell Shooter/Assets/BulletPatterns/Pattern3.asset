@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Pattern3
   m_EditorClassIdentifier: 
   PatternSettings:
-  - NumberOfBullets: 20
+  - NumberOfBullets: 10
     BulletSpeed: 10
     CooldownAfterShot: 0.1
     PhaseOffset: 0
     AngleOffset: 0
-  - NumberOfBullets: 40
+  - NumberOfBullets: 17
     BulletSpeed: 6
     CooldownAfterShot: 0.1
     PhaseOffset: 0
     AngleOffset: 0
-  - NumberOfBullets: 80
+  - NumberOfBullets: 25
     BulletSpeed: 4
     CooldownAfterShot: 0.1
     PhaseOffset: 0
     AngleOffset: 0
   Repetitions: 1
-  StartWait: 2
+  StartWait: 1
   EndtWait: 0.5
   AngleOffsetBetweenReps: 0

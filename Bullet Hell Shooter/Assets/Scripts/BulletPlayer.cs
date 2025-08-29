@@ -5,7 +5,7 @@ public class BulletPlayer : MonoBehaviour
 
     public float speed;
     private Rigidbody2D projectileRb;
-    private float lifeTime = 2f;
+    private float lifeTime = 4f;
     public static int activePlayerBullets = 0;
 
     private void Awake()
