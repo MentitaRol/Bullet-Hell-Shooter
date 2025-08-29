@@ -5,6 +5,10 @@ using System.Collections.Generic;
 public class BulletPool : MonoBehaviour
 {
     private static BulletPool instance;
+    public BulletEnemy BulletEnemy;
+    public int initialPoolSize = 10;
+    private List<BulletEnemy> bulletPool = new List<BulletEnemy>();
+
     public static BulletPool Instance
     {
         get
@@ -14,11 +18,6 @@ public class BulletPool : MonoBehaviour
             return instance;
         }
     }
-
-    public BulletEnemy BulletEnemy;
-    public int initialPoolSize = 10;
-
-    private List<BulletEnemy> bulletPool = new List<BulletEnemy>();
 
     private void Awake()
     {
@@ -60,5 +59,18 @@ public class BulletPool : MonoBehaviour
         AddBulletToPool(1);
         bulletPool[bulletPool.Count - 1].gameObject.SetActive(true);
         return bulletPool[bulletPool.Count - 1];
+    }
+
+    public int ActiveBulletsCount()
+    {
+        int activeBullets = 0;
+
+        for(int i = 0; i < bulletPool.Count; i++)
+        {
+            if(bulletPool[i].gameObject.activeSelf)
+                activeBullets++;
+        }
+
+        return activeBullets;
     }
 }
