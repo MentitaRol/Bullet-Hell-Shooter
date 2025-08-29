@@ -17,9 +17,4 @@ public class BulletPlayer : MonoBehaviour
         projectileRb.linearVelocity = direction * speed;
         Destroy(gameObject, lifeTime);
     }
-
-    private void OnCollisionEnter2D()
-    {
-        Destroy(gameObject);
-    }
 }
